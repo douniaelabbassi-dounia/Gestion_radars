@@ -29,7 +29,7 @@ public class ImmatriculationServiceApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Stream.of("Dounia", "Fatima", "Imane", "Walid", "Ahlam").forEach(name -> {
+        Stream.of("FATIMA", "BOUCHRA", "HAMZA", "MUSTAPHA").forEach(name -> {
             OwnerRequest ownerRequest = OwnerRequest.builder()
                     .name(name)
                     .birthDate(new Date().toString())
@@ -39,12 +39,12 @@ public class ImmatriculationServiceApplication implements CommandLineRunner {
         });
 
         restOwnerController.getOwners().forEach(owner -> {
-            Stream.of("Jeep", "Ferary", "Dacia").forEach(brand -> {
+            Stream.of("DACIA", "KIA").forEach(brand -> {
                 VehicleRequest vehicleRequest = VehicleRequest.builder()
-                        .regNumber("ABC-" + Math.random() * 10000)
+                        .regNumber("REG-" + Math.random() * 10000)
                         .brand(brand)
                         .fiscalPower((float)(Math.random() * 10))
-                        .model("model " + Math.random() * 100)
+                        .model("modele " + Math.random() * 100)
                         .build();
 
                 Long vehicleId = restVehicleController.saveVehicle(vehicleRequest).getId();

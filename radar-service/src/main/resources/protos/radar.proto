@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "com.mustaphaslimani.radarservice.web.grpc.stubs";
+option java_package = "org.sid.radarservice.web.grpc.stubs";
 
 service RadarService{
   rpc DetectInfraction(DetectRequest) returns (Infraction);
